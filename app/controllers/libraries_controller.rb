@@ -1,4 +1,7 @@
 class LibrariesController < ApplicationController
+
+  before_filter :find_library, :except => :index
+
   # GET /libraries
   # GET /libraries.json
   def index
@@ -13,8 +16,6 @@ class LibrariesController < ApplicationController
   # GET /libraries/1
   # GET /libraries/1.json
   def show
-    @library = Library.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @library }
@@ -24,8 +25,6 @@ class LibrariesController < ApplicationController
   # GET /libraries/new
   # GET /libraries/new.json
   def new
-    @library = Library.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @library }
@@ -34,14 +33,11 @@ class LibrariesController < ApplicationController
 
   # GET /libraries/1/edit
   def edit
-    @library = Library.find(params[:id])
   end
 
   # POST /libraries
   # POST /libraries.json
   def create
-    @library = Library.new(params[:library])
-
     respond_to do |format|
       if @library.save
         format.html { redirect_to @library, notice: 'Library was successfully created.' }
@@ -56,8 +52,6 @@ class LibrariesController < ApplicationController
   # PUT /libraries/1
   # PUT /libraries/1.json
   def update
-    @library = Library.find(params[:id])
-
     respond_to do |format|
       if @library.update_attributes(params[:library])
         format.html { redirect_to @library, notice: 'Library was successfully updated.' }
@@ -72,7 +66,6 @@ class LibrariesController < ApplicationController
   # DELETE /libraries/1
   # DELETE /libraries/1.json
   def destroy
-    @library = Library.find(params[:id])
     @library.destroy
 
     respond_to do |format|
@@ -80,4 +73,16 @@ class LibrariesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def find_library
+    if params[:id]
+      @library = Library.find(params[:id])
+    else
+      @library = Library.new(params[:library])
+    end
+  end
+
 end
+
