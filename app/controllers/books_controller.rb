@@ -78,9 +78,9 @@ class BooksController < ApplicationController
 
   def find_book
     if params[:id]
-      @book = Book.find(params[:id])
+      @book = Book.find(params[:id]).decorate
     else
-      @book = Book.new(params[:book])
+      @book = Book.new(params[:book]).decorate
     end
   end
 

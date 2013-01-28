@@ -78,9 +78,9 @@ class LibrariesController < ApplicationController
 
   def find_library
     if params[:id]
-      @library = Library.find(params[:id])
+      @library = Library.find(params[:id]).decorate
     else
-      @library = Library.new(params[:library])
+      @library = Library.new(params[:library]).decorate
     end
   end
 
