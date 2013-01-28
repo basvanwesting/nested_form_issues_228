@@ -1,0 +1,14 @@
+= simple_nested_form_for(@library) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+
+    = field_set_tag 'Books' do
+      = f.simple_fields_for :books do |s|
+        = s.input :title, :as => :string_with_remove
+
+      = f.link_to_add "Add", :books, :class => 'btn btn-small'
+
+  .form-actions
+    = f.button :submit

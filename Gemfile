@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'draper', '1.0.0'
 gem 'nested_form', '0.3.1'
+gem 'haml-rails'
+gem 'simple_form', '2.0.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -23,6 +25,14 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :test do
+  gem 'autotest-standalone'
+  gem 'autotest-growl'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
