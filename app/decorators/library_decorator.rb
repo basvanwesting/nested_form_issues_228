@@ -12,3 +12,4 @@ class LibraryDecorator < Draper::Decorator
   #   end
 
 end
+

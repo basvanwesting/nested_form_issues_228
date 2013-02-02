@@ -2,13 +2,14 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
+    = f.input :name, :label => 'Library Name'
 
     = field_set_tag 'Books' do
       = f.simple_fields_for :books do |s|
-        = s.input :title, :as => :string_with_remove
+        = s.input :title, :label => 'Book Title'
+        = s.link_to_remove "Remove"
 
-      = f.link_to_add "Add", :books, :class => 'btn btn-small'
+      = f.link_to_add "Add Book", :books, :class => 'btn btn-small'
 
   .form-actions
     = f.button :submit

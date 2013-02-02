@@ -31,6 +31,8 @@ group :test do
   gem 'autotest-growl'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
 end
 
 

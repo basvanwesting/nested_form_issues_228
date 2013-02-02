@@ -4,6 +4,10 @@
   %b Name:
   = @library.name
 
+%p
+  %b Books:
+  = @library.books.map(&:title)
+
 = link_to 'Edit', edit_library_path(@library)
 \|
 = link_to 'Back', libraries_path
