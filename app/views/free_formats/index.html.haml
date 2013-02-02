@@ -1,0 +1,19 @@
+%h1 Listing Free Formats
+
+%table
+  %tr
+    %th Type
+    %th
+    %th
+    %th
+
+  - @free_formats.each do |free_format|
+    %tr
+      %td= free_format.class_name
+      %td= link_to 'Show', free_format_path(:id => free_format.id, :free_format_class_name => free_format.class_name)
+      %td= link_to 'Edit', edit_free_format_path(:id => free_format.id, :free_format_class_name => free_format.class_name)
+      %td= link_to 'Destroy', free_format_path(:id => free_format.id, :free_format_class_name => free_format.class_name), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New free format', select_type_free_formats_path

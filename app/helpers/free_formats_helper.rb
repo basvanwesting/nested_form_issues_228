@@ -1,0 +1,2 @@
+module FreeFormatsHelper
+end

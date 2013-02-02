@@ -1,0 +1,12 @@
+%h1= "Edit #{@free_format.class_name}"
+
+= simple_nested_form_for(@free_format,
+  :as       => :free_format,
+  :url      => free_format_path(:id => @free_format.id, :free_format_class_name => @free_format.class_name),
+  :method   => :put,
+  :defaults => { :hint_html => {:class => "help-inline"} }) do |f|
+
+  = render 'form', :f => f
+
+= link_to 'Back', free_formats_path, :class => 'btn btn-small'
+

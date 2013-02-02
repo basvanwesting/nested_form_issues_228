@@ -1,7 +1,12 @@
 DecoratorBreaksLinkToAdd::Application.routes.draw do
+
+  resources :free_formats do
+    collection do
+      get 'select_type'
+    end
+  end
+
   resources :chapters
-
-
   resources :books
   resources :libraries
 

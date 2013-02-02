@@ -1,0 +1,14 @@
+%p
+  Please select a type below.
+
+= form_tag select_type_free_formats_path, :method => :get do
+  %table
+    %tr
+      %th{:colspan => 2} Type
+    - @free_format_class_names.each do |free_format_class_name|
+      %tr
+        %td{:colspan => 2}= link_to free_format_class_name, new_free_format_path(:free_format_class_name => free_format_class_name), :class => 'btn'
+
+
+
+

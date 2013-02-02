@@ -1,0 +1,4 @@
+= f.simple_fields_for :book do |book_form|
+  = book_form.input :title, :label => 'Book Title'
+  = render 'chapters/nested_form', :f => book_form
+

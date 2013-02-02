@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Type:
+  = @free_format.class_name
+
+= link_to 'Edit', edit_free_format_path(@free_format)
+\|
+= link_to 'Back', free_formats_path

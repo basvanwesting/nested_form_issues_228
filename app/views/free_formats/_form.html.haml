@@ -1,0 +1,8 @@
+= f.error_notification
+
+.form-inputs
+  = render @free_format.template_location, :f => f
+
+.form-actions
+  = f.button :submit, 'Submit', :class => 'btn btn-primary'
+
