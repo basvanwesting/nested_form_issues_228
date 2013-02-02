@@ -1,10 +1,26 @@
-== Test repo for link:https://github.com/ryanb/nested_form/issues/228
+== Test repo for Nested Form
 
+Currently 2 issues are related:
+  * https://github.com/ryanb/nested_form/issues/228
+  * https://github.com/ryanb/nested_form/pull/230
+
+
+=== link:https://github.com/ryanb/nested_form/issues/228
 Using 'decorates_association' breaks nested form. This sample app uses Capybara Webkit.
 
-Passing testcases (without decorates_association):
-  see commit 150f210 breaking spec because of use 'decorates_association :books'
+on branch 'decorates_association_issue'
 
-Failing testcases (with decorates_association):
-  see commit c7b1a8d green specs with Capybara webkit
+* commit c7b1a8d green baseline specs with Capybara webkit
+* commit 150f210 breaking spec because of use 'decorates_association :books'
+
+=== link:https://github.com/ryanb/nested_form/pull/230
+A complex setup where double nesting breaks. The javascript will incorrectly
+strip out the name of the second association and replace it with an integer,
+breaking the form
+
+on branch 'free_format'
+
+* commit f7800ed: working example with 3 levels of nesting, so issue the doesn't always occur and is more specific
+* commit e026a5: working example in a more complex setup with 2 levels of nesting
+* commit 29f5d14: failing example in a more complex setup with 3 levels of nesting
 
