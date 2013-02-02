@@ -1,0 +1,8 @@
+= field_set_tag 'Books' do
+  = f.simple_fields_for :books do |book_form|
+    = book_form.input :title, :label => 'Book Title'
+    = book_form.link_to_remove "Remove"
+
+    = render 'chapters/nested_form', :f => book_form
+
+  = f.link_to_add "Add Book", :books, :class => 'btn btn-small'

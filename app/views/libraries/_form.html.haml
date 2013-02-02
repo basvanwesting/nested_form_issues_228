@@ -4,19 +4,7 @@
   .form-inputs
     = f.input :name, :label => 'Library Name'
 
-    = field_set_tag 'Books' do
-      = f.simple_fields_for :books do |book_form|
-        = book_form.input :title, :label => 'Book Title'
-        = book_form.link_to_remove "Remove"
-
-        = field_set_tag 'Chapters' do
-          = book_form.simple_fields_for :chapters do |chapter_form|
-            = chapter_form.input :title, :label => 'Chapter Title'
-            = chapter_form.link_to_remove "Remove"
-
-          = book_form.link_to_add "Add Chapter", :chapters, :class => 'btn btn-small'
-
-      = f.link_to_add "Add Book", :books, :class => 'btn btn-small'
+    = render 'books/nested_form', :f => f
 
   .form-actions
     = f.button :submit
