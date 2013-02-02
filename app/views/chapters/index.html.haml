@@ -11,7 +11,7 @@
   - @chapters.each do |chapter|
     %tr
       %td= chapter.title
-      %td= chapter.book
+      %td= chapter.book.title
       %td= link_to 'Show', chapter
       %td= link_to 'Edit', edit_chapter_path(chapter)
       %td= link_to 'Destroy', chapter, method: :delete, data: { confirm: 'Are you sure?' }
