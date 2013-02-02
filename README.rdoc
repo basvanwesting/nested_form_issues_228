@@ -1,8 +1,8 @@
 == Test repo for Nested Form
 
 Currently 2 issues are related:
-  * link:https://github.com/ryanb/nested_form/issues/228
-  * link:https://github.com/ryanb/nested_form/pull/230
+  * https://github.com/ryanb/nested_form/issues/228
+  * https://github.com/ryanb/nested_form/pull/230
 
 
 === link:https://github.com/ryanb/nested_form/issues/228
