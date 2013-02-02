@@ -23,4 +23,18 @@ describe "manage libraries", :type => :feature, :js => true do
     Library.first.books.first.title.should == 'some book title'
   end
 
+  it "add a library with a book with a chapter" do
+    visit '/libraries/new'
+    fill_in 'Library Name', :with => 'another library name'
+    click_on 'Add Book'
+    fill_in 'Book Title', :with => 'some book title'
+    click_on 'Add Chapter'
+    fill_in 'Chapter Title', :with => 'some chapter title'
+    click_on 'Create Library'
+    page.should have_content 'Library was successfully created'
+    Library.first.name.should == 'another library name'
+    Library.first.books.first.title.should == 'some book title'
+    Library.first.books.first.chapters.first.title.should == 'some chapter title'
+  end
+
 end

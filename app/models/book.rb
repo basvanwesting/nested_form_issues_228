@@ -1,4 +1,7 @@
 class Book < ActiveRecord::Base
   belongs_to :library
-  attr_accessible :title, :library_id
+  attr_accessible :title, :library_id, :chapters_attributes
+
+  has_many :chapters, :dependent => :destroy
+  accepts_nested_attributes_for :chapters
 end
